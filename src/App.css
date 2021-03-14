@@ -1,0 +1,213 @@
+/* MOBILE */
+html{
+  font-size:14px;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+}
+/* TABLET */
+@media only screen and (min-width: 480px) {
+  html{
+      font-size:16px;
+  }
+}
+/* DESKTOP */
+@media only screen and (min-width: 768px) {
+  html{
+      font-size:18px;
+  }
+}
+/* X-LARGE */
+@media only screen and (min-width: 1024px) {
+  html{
+      font-size:20px;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,900');
+
+body {
+	margin: 0;
+	padding: 0;
+}
+.header{
+  width: 100vw;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:.5rem;
+  background:rgba(255, 255, 255, 0.9);
+  font-size: 1rem;  
+  font-weight: bold;
+  z-index:2;
+  /* position: fixed; */
+  top: 0px;
+  border-bottom: .5rem solid white;
+  }
+
+.burger{
+  display:none;
+}
+
+/* make burger appear at lower screen sizes */
+@media only screen and (max-width: 768px) {
+  .burger{
+    display:flex;
+  }
+}
+  .RightNav{
+    flex-flow: column nowrap;
+    background-color: #0D2538;
+    position: fixed;
+    /* transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'}; */
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 300px;
+    padding-top: 3.5rem;
+    transition: transform 0.3s ease-in-out;
+  }
+
+.menu {
+  position: absolute;
+  right:0;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px; 
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+.nav-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+  
+  .nav-title{
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+
+.title {
+  font-family: 'Poppins';
+  font-size: 1.5em;
+  color: #236F71;
+  margin:0px;
+  margin-left: 1rem;
+}
+
+.subtitle {
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-size: 1rem;
+  color: #828282;
+  display: inline;
+  margin:0px;
+  padding: 10px;
+  /* position: relative; */
+}
+.navigation{
+  flex-direction: row;
+  justify-content: space-between;
+ }
+
+.navigation a {
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-size: 1rem;
+  color: #828282;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.navigation a:hover {
+  color: 236F71;
+}
+
+/* trying to make the below affect the ifram specifically but it's not working */
+.resume {
+  z-index: 1;
+  /* outline: none; */
+}
+.container {
+	background: #EBEDED;
+  height: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+  position: relative;
+}
+
+.shape-blob {
+	background:linear-gradient(to right, #B4BEBD, #236F71);
+	height: 200px;
+	width: 200px;
+	border-radius: 30% 50% 20% 40%;
+  	animation: 
+		transform 20s ease-in-out infinite both alternate,
+		movement_one 40s ease-in-out infinite both;
+	opacity:.7;
+	position: absolute;
+	left: 70%;
+	top: 50%;
+}
+.shape-blob.one{
+	height: 500px;
+	width: 500px;
+	left: -200px;
+	top: -150px;
+	transform: rotate(-180deg);
+	animation: transform 30s ease-in-out infinite both alternate, movement_two 60s ease-in-out infinite both;
+}
+
+.shape-blob.two{
+	height: 350px;
+	width: 350px;
+	left: 500px;
+	top: -150px;
+	transform: rotate(-180deg);
+	animation: transform 30s ease-in-out infinite both alternate, movement_two 60s ease-in-out infinite both;
+}
+
+@keyframes transform
+{
+    0%,
+  100% { border-radius: 33% 67% 70% 30% / 30% 30% 70% 70%; } 
+   20% { border-radius: 37% 63% 51% 49% / 37% 65% 35% 63%; } 
+   40% { border-radius: 36% 64% 64% 36% / 64% 48% 52% 36%; } 
+   60% { border-radius: 37% 63% 51% 49% / 30% 30% 70% 70%; } 
+   80% { border-radius: 40% 60% 42% 58% / 41% 51% 49% 59%; } 
+}
+
+
+@keyframes movement_one
+{
+    0%,
+  100% { transform: none; }
+   50% { transform: translate(50%, 20%) rotateY(10deg) scale(1.2); }
+}
+
+@keyframes movement_two
+{
+    0%,
+  500% { transform: none; }
+   50% { transform: translate(50%, 20%) rotate(-200deg) scale(1.2);}
+}
+
